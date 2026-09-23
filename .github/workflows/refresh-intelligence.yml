@@ -2,6 +2,12 @@ name: Refresh Darwin job intelligence
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "scripts/intelligence_pipeline.py"
+      - "data/source_catalog.json"
+      - "requirements.txt"
+      - ".github/workflows/refresh-intelligence.yml"
   schedule:
     # 06:40 Darwin (ACST) every day.
     - cron: "10 21 * * *"
