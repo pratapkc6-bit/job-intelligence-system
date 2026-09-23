@@ -1,0 +1,16 @@
+[
+  {"skill": "Microsoft 365", "count": 3},
+  {"skill": "Active Directory", "count": 2},
+  {"skill": "Customer Support", "count": 2},
+  {"skill": "SQL", "count": 2},
+  {"skill": "Windows", "count": 2},
+  {"skill": "Communication", "count": 1},
+  {"skill": "Data Analysis", "count": 1},
+  {"skill": "Excel", "count": 1},
+  {"skill": "ITIL", "count": 1},
+  {"skill": "Networking", "count": 1},
+  {"skill": "Power BI", "count": 1},
+  {"skill": "REST APIs", "count": 1},
+  {"skill": "Ticketing", "count": 1},
+  {"skill": "Troubleshooting", "count": 1}
+]
