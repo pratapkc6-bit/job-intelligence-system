@@ -65,6 +65,10 @@ Expected production URL:
 
 `https://pratapkc6-bit.github.io/job-intelligence-system/`
 
+## Resume Maker
+
+The live app includes an evidence-based Resume Maker at `/resume/`. It can select a tracked job or accept pasted requirements, highlight verified skill matches, surface gaps separately, tailor the summary, copy the resume, and print/save it as PDF. Profile edits are stored locally in the browser; no secret API keys are exposed in GitHub Pages.
+
 ## Roadmap
 
 ### V1 — Foundation
