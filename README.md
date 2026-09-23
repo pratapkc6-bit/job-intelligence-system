@@ -27,7 +27,7 @@ The sample job records are placeholders and are clearly labelled. Live job-sourc
 - Python
 - PostgreSQL / Neon
 - GitHub Actions
-- Vercel (deployment target)
+- GitHub Pages (hosting) + GitHub Actions (build/deploy)
 
 ## Run locally
 
@@ -56,6 +56,14 @@ Core entities:
 - job_skills
 - my_skills
 - applications
+
+## Live deployment
+
+The production site is published from the `main` branch by GitHub Actions to GitHub Pages.
+
+Expected production URL:
+
+`https://pratapkc6-bit.github.io/job-intelligence-system/`
 
 ## Roadmap
 
