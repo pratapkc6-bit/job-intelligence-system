@@ -146,6 +146,18 @@ export default function IntelligenceDashboard() {
     }
   }, []);
 
+  function openIntelligence(jobId: number) {
+    setSelectedId(jobId);
+    window.requestAnimationFrame(() => {
+      window.setTimeout(() => {
+        document.getElementById("job-intelligence")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 0);
+    });
+  }
+
   function updateApplication(jobId: number, patch: Partial<AppRecord>) {
     setApps((current) => {
       const previous = current[String(jobId)] ?? {
@@ -283,7 +295,7 @@ export default function IntelligenceDashboard() {
           </p>
         </div>
         {bestFit && (
-          <button className="primaryButton" onClick={() => setSelectedId(bestFit.job.id)}>
+          <button className="primaryButton" onClick={() => openIntelligence(bestFit.job.id)}>
             Open intelligence
           </button>
         )}
@@ -317,7 +329,7 @@ export default function IntelligenceDashboard() {
                 type="button"
                 className={`jobCard ${selected?.id === job.id ? "selectedJob" : ""}`}
                 key={job.id}
-                onClick={() => setSelectedId(job.id)}
+                onClick={() => openIntelligence(job.id)}
               >
                 <div className="jobCardTop">
                   <span className={`actionBadge action-${intel.action.toLowerCase().replaceAll(" ", "-")}`}>
@@ -342,7 +354,7 @@ export default function IntelligenceDashboard() {
       </section>
 
       {selected && selectedIntel && selectedProject && (
-        <section className="intelligenceGrid">
+        <section className="intelligenceGrid" id="job-intelligence">
           <article className="panel jobDetailPanel">
             <div className="panelHeader">
               <div>
@@ -482,7 +494,7 @@ export default function IntelligenceDashboard() {
           {trackedApps.length ? (
             <div className="applicationList">
               {trackedApps.map((item) => (
-                <button key={item.job!.id} onClick={() => setSelectedId(item.job!.id)}>
+                <button key={item.job!.id} onClick={() => openIntelligence(item.job!.id)}>
                   <div><strong>{item.job!.title}</strong><span>{item.job!.company}</span></div>
                   <span className="pill">{item.status}</span>
                 </button>
