@@ -1,33 +1,86 @@
 # Darwin Job Intelligence
 
-A portfolio-grade system for turning real Darwin / Northern Territory IT vacancies into practical career actions.
+A live Darwin / Northern Territory IT career command centre that turns real vacancy evidence into practical career actions.
 
-Instead of learning technologies at random, the project tracks local IT roles, extracts recurring skills, compares them with a personal skill profile, and produces three useful outcomes:
+## What the system does
 
-- **APPLY** — roles worth investigating now.
-- **LEARN** — skills that repeatedly block otherwise realistic roles.
-- **BUILD** — portfolio projects that can prove those skills.
+1. Tracks real Darwin/NT technology vacancies with source URLs and verification dates.
+2. De-duplicates the same vacancy across multiple sources and marks known closing dates as expired.
+3. Extracts technical and business requirements into a consistent skill vocabulary.
+4. Builds a Darwin IT skill-demand snapshot and records daily history for future 7/30/90-day trends.
+5. Compares each vacancy with a verified personal profile and separates matches from gaps.
+6. Produces an evidence-based action: APPLY, LEARN, BUILD, PREPARE INTERVIEW, or DEVELOPMENT TARGET.
+7. Tailors a resume to a selected role without inventing experience or unsupported skills.
+8. Converts missing requirements into learning priorities and portfolio-project ideas.
+9. Tracks application status and notes privately in the user's browser.
+10. Presents the above in one mobile-friendly career command centre.
 
-## V1 status
+## Live deployment
 
-The first version is intentionally small and inspectable:
+Production:
 
-- Next.js dashboard foundation
-- sample Darwin-style IT job records
-- deterministic Python skill-demand analysis
-- PostgreSQL / Neon schema
-- scheduled GitHub Actions analysis workflow
-- architecture documentation
+`https://pratapkc6-bit.github.io/job-intelligence-system/`
 
-The sample job records are placeholders and are clearly labelled. Live job-source ingestion comes next so the system does not quietly transform fiction into career advice, a surprisingly popular software feature.
+Resume Maker:
+
+`https://pratapkc6-bit.github.io/job-intelligence-system/resume/`
+
+The site is hosted by GitHub Pages and deployed by GitHub Actions.
+
+## Current live data
+
+The repository no longer uses fictional employers. The live dataset is seeded from current Darwin/NT vacancies verified on 23 September 2026 and is refreshed by the intelligence pipeline.
+
+Current sources include public employer/government career pages and traceable public job listings. The pipeline automatically discovers public Darwin roles from NEC Careers and verifies the known source links. Additional source adapters can be added only where automated access is appropriate.
+
+The system stores short structured facts, extracted skills and source links rather than redistributing full third-party job advertisements.
 
 ## Stack
 
 - Next.js + TypeScript
 - Python
-- PostgreSQL / Neon
 - GitHub Actions
-- GitHub Pages (hosting) + GitHub Actions (build/deploy)
+- GitHub Pages
+- Browser LocalStorage for private application/profile state
+- PostgreSQL/Neon schema retained for a future authenticated multi-device version
+
+## Intelligence pipeline
+
+`scripts/intelligence_pipeline.py` runs every morning at approximately 06:40 Darwin time.
+
+It:
+
+- discovers supported public employer vacancies
+- validates known sources
+- de-duplicates cross-source vacancies
+- applies closing-date expiry
+- extracts conservative skill signals
+- refreshes skill demand
+- stores a daily market snapshot
+- commits changed public job intelligence
+- rebuilds and deploys the refreshed dashboard
+
+Source definitions are documented in `data/source_catalog.json`.
+
+## Resume Maker
+
+The Resume Maker can:
+
+- open directly from a selected job
+- accept pasted job requirements
+- compare requirements against verified skills
+- reorder relevant evidence
+- tailor the professional summary
+- show missing requirements separately
+- copy the resume
+- print/save as PDF
+- save profile edits locally on the device
+
+It deliberately does not insert unsupported skills or experience.
+
+## Privacy
+
+Personal application status, notes and edited resume profile data stay in the browser. They are not committed to this public GitHub repository.
 
 ## Run locally
 
@@ -36,19 +89,16 @@ npm install
 npm run dev
 ```
 
-Then open `http://localhost:3000`.
-
-Run the Python analyser:
+Run the intelligence pipeline:
 
 ```bash
-python scripts/analyse_jobs.py
+pip install -r requirements.txt
+python scripts/intelligence_pipeline.py
 ```
 
-## Database
+## Database model
 
-The initial relational model is in `database/schema.sql`.
-
-Core entities:
+`database/schema.sql` contains a PostgreSQL/Neon model for a later authenticated, cross-device version:
 
 - companies
 - jobs
@@ -57,42 +107,10 @@ Core entities:
 - my_skills
 - applications
 
-## Live deployment
-
-The production site is published from the `main` branch by GitHub Actions to GitHub Pages.
-
-Expected production URL:
-
-`https://pratapkc6-bit.github.io/job-intelligence-system/`
-
-## Resume Maker
-
-The live app includes an evidence-based Resume Maker at `/resume/`. It can select a tracked job or accept pasted requirements, highlight verified skill matches, surface gaps separately, tailor the summary, copy the resume, and print/save it as PDF. Profile edits are stored locally in the browser; no secret API keys are exposed in GitHub Pages.
-
-## Roadmap
-
-### V1 — Foundation
-Dashboard, schema, deterministic analysis and sample data.
-
-### V2 — Live Darwin jobs
-Ingest current vacancies from approved/public sources, normalize them, remove duplicates, and preserve source URLs and dates.
-
-### V3 — Skill intelligence
-Track skill frequency, role categories, employers and changes over time.
-
-### V4 — Personal matching
-Compare vacancy requirements with a personal skill profile and explain gaps with evidence.
-
-### V5 — Learning and portfolio loop
-Convert high-value gaps into lessons and portfolio projects.
-
-### V6 — Application intelligence
-Track applications, tailored evidence, interview topics and outcomes.
-
 ## Portfolio story
 
-> I built a Darwin-focused job intelligence platform that converts local vacancy data into skill-demand analysis, job-readiness signals and learning priorities. I designed the data model, built the analysis pipeline in Python, used PostgreSQL for persistence, automated analysis with GitHub Actions, and built the dashboard with Next.js for deployment on Vercel.
+> I built a Darwin-focused career intelligence platform that tracks traceable local technology vacancies, extracts skill demand, compares job requirements with verified evidence, converts gaps into learning and portfolio actions, prepares interview questions, generates tailored resumes, and tracks application progress. I built the dashboard with Next.js and TypeScript, the intelligence pipeline in Python, automated refresh/deployment with GitHub Actions, and hosted the application on GitHub Pages.
 
-## Current limitation
+## Important limitation
 
-V1 ships with sample records only. No scraped or third-party job advertisement text is redistributed in the repository.
+No static website can safely contain a private AI/search API key. The current matching and decision engine is transparent and deterministic. The architecture can later add a secure backend for richer language-model extraction or authenticated multi-device storage without exposing secrets in GitHub Pages.
