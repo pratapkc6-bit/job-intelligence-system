@@ -1,0 +1,2 @@
+# V1 uses only the Python standard library.
+# Future collectors/database integrations will add requests, psycopg, pydantic, etc.
