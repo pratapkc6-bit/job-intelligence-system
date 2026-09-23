@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getMatchCounts, getSkillSummary, jobs } from "@/lib/data";
 
 export default function Home() {
@@ -88,6 +89,18 @@ export default function Home() {
             <div><span>BUILD</span><strong>IT support lab</strong></div>
           </div>
         </aside>
+      </section>
+
+      <section className="panel resumePromo">
+        <div>
+          <p className="eyebrow">APPLICATION TOOL</p>
+          <h2>Turn requirements into a tailored resume</h2>
+          <p className="muted">
+            Select a tracked job or paste a job advertisement. The Resume Maker highlights verified
+            evidence, reorders relevant skills, and keeps missing requirements out of the resume.
+          </p>
+        </div>
+        <Link className="primaryLink" href="/resume">Open Resume Maker →</Link>
       </section>
 
       <section className="panel jobsPanel">
