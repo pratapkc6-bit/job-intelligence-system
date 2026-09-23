@@ -67,7 +67,7 @@ export default function Home() {
                 <div className="barTrack">
                   <div
                     className="barFill"
-                    style={{ width: \`\${Math.max((item.count / topSkillCount) * 100, 8)}%\` }}
+                    style={{ width: `${Math.max((item.count / topSkillCount) * 100, 8)}%` }}
                   />
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function Home() {
                     <small>{job.location}</small>
                   </td>
                   <td>{job.company}</td>
-                  <td><span className={\`match \${job.matchBand.replaceAll(" ", "-").toLowerCase()}\`}>{job.matchBand}</span></td>
+                  <td><span className={`match ${job.matchBand.replaceAll(" ", "-").toLowerCase()}`}>{job.matchBand}</span></td>
                   <td>{job.skills.slice(0, 3).join(" · ")}</td>
                 </tr>
               ))}
