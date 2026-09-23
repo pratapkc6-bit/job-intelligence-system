@@ -194,24 +194,62 @@ def main() -> None:
     jobs = load(JOBS_PATH)
     today = date.today()
 
-    # Deduplicate by source URL first, then company/title/location.
-    seen = set()
-    deduped = []
-    for job in jobs:
-        key = (
-            job.get("sourceUrl")
-            or "|".join([
-                normalise(job.get("company", "")),
-                normalise(job.get("title", "")),
-                normalise(job.get("location", "")),
-            ])
-        )
-        if key in seen:
-            continue
-        seen.add(key)
-        deduped.append(job)
+    discovered = discover_nec(jobs)
+    combined = jobs + discovered
 
-    deduped.extend(discover_nec(deduped))
+    def source_priority(job: dict) -> int:
+        source_type = job.get("sourceType", "").lower()
+        source = job.get("source", "").lower()
+        if "official employer" in source_type or "government" in source_type:
+            return 0
+        if "employer-posted" in source_type or "careers" in source:
+            return 1
+        if "mirror" in source_type:
+            return 2
+        return 3
+
+    def dedupe_key(job: dict) -> str:
+        location = normalise(job.get("location", ""))
+        # Darwin variants should collapse even when a listing also names another eligible city.
+        location_key = "darwin" if "darwin" in location else location
+        return "|".join([
+            normalise(job.get("company", "")),
+            normalise(job.get("title", "")),
+            location_key,
+        ])
+
+    merged: dict[str, dict] = {}
+    for job in combined:
+        key = dedupe_key(job)
+        if not key.strip("|"):
+            key = job.get("sourceUrl", "")
+        if key not in merged:
+            merged[key] = job
+            continue
+
+        current = merged[key]
+        current_sources = set(current.get("alternateSources", []))
+        if current.get("sourceUrl"):
+            current_sources.add(current["sourceUrl"])
+        if job.get("sourceUrl"):
+            current_sources.add(job["sourceUrl"])
+
+        # Preserve the richer analysed record, but prefer an official canonical source.
+        if source_priority(job) < source_priority(current):
+            for field in ("source", "sourceUrl", "sourceType"):
+                if job.get(field):
+                    current[field] = job[field]
+
+        current["skills"] = sorted(set(current.get("skills", [])) | set(job.get("skills", [])))
+        current["desirableSkills"] = sorted(
+            set(current.get("desirableSkills", [])) | set(job.get("desirableSkills", []))
+        )
+        current["requirements"] = list(dict.fromkeys(
+            current.get("requirements", []) + job.get("requirements", [])
+        ))
+        current["alternateSources"] = sorted(current_sources)
+
+    deduped = list(merged.values())
 
     for job in deduped:
         closing = job.get("closingDate")
