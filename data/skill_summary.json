@@ -1,10 +1,10 @@
 [
   {
-    "skill": "Stakeholder Management",
-    "count": 9
+    "skill": "Customer Service",
+    "count": 8
   },
   {
-    "skill": "Customer Service",
+    "skill": "Stakeholder Management",
     "count": 8
   },
   {
@@ -12,19 +12,15 @@
     "count": 7
   },
   {
-    "skill": "System Integration",
-    "count": 6
-  },
-  {
-    "skill": "Documentation",
-    "count": 5
-  },
-  {
     "skill": "ITIL",
     "count": 5
   },
   {
-    "skill": "Business Analysis",
+    "skill": "System Integration",
+    "count": 5
+  },
+  {
+    "skill": "Documentation",
     "count": 4
   },
   {
@@ -32,11 +28,11 @@
     "count": 3
   },
   {
-    "skill": "Confluence",
+    "skill": "Business Analysis",
     "count": 3
   },
   {
-    "skill": "Data Mapping",
+    "skill": "Confluence",
     "count": 3
   },
   {
@@ -60,19 +56,11 @@
     "count": 3
   },
   {
-    "skill": "Requirements Gathering",
-    "count": 3
-  },
-  {
     "skill": "Risk Management",
     "count": 3
   },
   {
     "skill": "SharePoint",
-    "count": 3
-  },
-  {
-    "skill": "Testing",
     "count": 3
   },
   {
@@ -89,6 +77,10 @@
   },
   {
     "skill": "Data Analysis",
+    "count": 2
+  },
+  {
+    "skill": "Data Mapping",
     "count": 2
   },
   {
@@ -120,6 +112,10 @@
     "count": 2
   },
   {
+    "skill": "Requirements Gathering",
+    "count": 2
+  },
+  {
     "skill": "ServiceNow",
     "count": 2
   },
@@ -129,6 +125,10 @@
   },
   {
     "skill": "Systems Analysis",
+    "count": 2
+  },
+  {
+    "skill": "Testing",
     "count": 2
   },
   {
