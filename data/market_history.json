@@ -1,7 +1,56 @@
 [
   {
     "date": "2026-09-23",
-    "activeJobs": 12,
-    "note": "Baseline snapshot established from verified Darwin/NT technology vacancies."
+    "activeJobs": 17,
+    "topSkills": [
+      {
+        "skill": "Stakeholder Management",
+        "count": 9
+      },
+      {
+        "skill": "Customer Service",
+        "count": 8
+      },
+      {
+        "skill": "Troubleshooting",
+        "count": 7
+      },
+      {
+        "skill": "System Integration",
+        "count": 6
+      },
+      {
+        "skill": "Documentation",
+        "count": 5
+      },
+      {
+        "skill": "ITIL",
+        "count": 5
+      },
+      {
+        "skill": "Business Analysis",
+        "count": 4
+      },
+      {
+        "skill": "Azure DevOps",
+        "count": 3
+      },
+      {
+        "skill": "Confluence",
+        "count": 3
+      },
+      {
+        "skill": "Data Mapping",
+        "count": 3
+      },
+      {
+        "skill": "Intune",
+        "count": 3
+      },
+      {
+        "skill": "Jira",
+        "count": 3
+      }
+    ]
   }
 ]

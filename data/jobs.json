@@ -43,7 +43,10 @@
       "National Police Clearance",
       "Working with Children/OCHRE"
     ],
-    "matchBand": "Strong Match"
+    "matchBand": "Strong Match",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
   },
   {
     "id": 102,
@@ -86,7 +89,10 @@
       "Issue and dependency escalation",
       "IT, Business Analysis or Information Systems qualification desirable"
     ],
-    "matchBand": "Strong Match"
+    "matchBand": "Strong Match",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
   },
   {
     "id": 103,
@@ -126,7 +132,10 @@
       "Stakeholder engagement",
       "Australian Government security suitability"
     ],
-    "matchBand": "Development Target"
+    "matchBand": "Development Target",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "protected"
   },
   {
     "id": 104,
@@ -162,7 +171,10 @@
       "Agile delivery",
       "Support and enhancement of enterprise applications"
     ],
-    "matchBand": "Development Target"
+    "matchBand": "Development Target",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
   },
   {
     "id": 105,
@@ -200,7 +212,10 @@
       "Conduct internal audits",
       "Review technical and operational knowledge"
     ],
-    "matchBand": "Reach"
+    "matchBand": "Reach",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
   },
   {
     "id": 106,
@@ -241,7 +256,10 @@
       "FortiGate firewalls",
       "Incident escalation and outage resolution"
     ],
-    "matchBand": "Development Target"
+    "matchBand": "Development Target",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "protected"
   },
   {
     "id": 107,
@@ -283,7 +301,10 @@
       "Incident and service request handling",
       "End-user support"
     ],
-    "matchBand": "Reach"
+    "matchBand": "Reach",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "protected"
   },
   {
     "id": 108,
@@ -317,7 +338,10 @@
       "Stakeholder engagement",
       "Digital/customer engagement systems"
     ],
-    "matchBand": "Reach"
+    "matchBand": "Reach",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "protected"
   },
   {
     "id": 109,
@@ -354,7 +378,10 @@
       "Technical solution delivery",
       "Improving system interoperability"
     ],
-    "matchBand": "Reach"
+    "matchBand": "Reach",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "protected"
   },
   {
     "id": 110,
@@ -386,7 +413,10 @@
       "Resolve technical issues",
       "Deliver system enhancements and improvements"
     ],
-    "matchBand": "Reach"
+    "matchBand": "Reach",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "protected"
   },
   {
     "id": 111,
@@ -426,7 +456,10 @@
       "Evidence and traceability",
       "Clear communication"
     ],
-    "matchBand": "Development Target"
+    "matchBand": "Development Target",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
   },
   {
     "id": 112,
@@ -458,6 +491,175 @@
       "Client-facing troubleshooting",
       "Managed services support"
     ],
-    "matchBand": "Reach"
+    "matchBand": "Reach",
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "protected"
+  },
+  {
+    "id": 260923001,
+    "title": "System Engineer",
+    "company": "NEC Australia",
+    "location": "Darwin, NT",
+    "category": "Technology",
+    "seniority": "Unclassified",
+    "employmentType": "See source",
+    "salary": null,
+    "postedDate": null,
+    "closingDate": null,
+    "source": "NEC Careers",
+    "sourceUrl": "https://careers.nec.com/job/Darwin-System-Engineer-Nort-0800/1364882857/",
+    "sourceType": "official employer careers",
+    "lastVerified": "2026-09-23",
+    "summary": "Automatically discovered from NEC Careers. Open the original source for the full role description.",
+    "skills": [
+      "Active Directory",
+      "Customer Service",
+      "ITIL",
+      "Intune",
+      "Troubleshooting"
+    ],
+    "desirableSkills": [],
+    "requirements": [],
+    "matchBand": "Reach",
+    "pipelineDiscovered": true,
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
+  },
+  {
+    "id": 260923002,
+    "title": "Customer Success Manager",
+    "company": "NEC Australia",
+    "location": "Darwin, NT",
+    "category": "Technology",
+    "seniority": "Unclassified",
+    "employmentType": "See source",
+    "salary": null,
+    "postedDate": null,
+    "closingDate": null,
+    "source": "NEC Careers",
+    "sourceUrl": "https://careers.nec.com/job/Darwin-Customer-Success-Manager-Nort-0800/1361835857/",
+    "sourceType": "official employer careers",
+    "lastVerified": "2026-09-23",
+    "summary": "Automatically discovered from NEC Careers. Open the original source for the full role description.",
+    "skills": [
+      "Customer Service",
+      "ITIL",
+      "Process Improvement",
+      "Stakeholder Management"
+    ],
+    "desirableSkills": [],
+    "requirements": [],
+    "matchBand": "Reach",
+    "pipelineDiscovered": true,
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
+  },
+  {
+    "id": 260923003,
+    "title": "Systems Engineer, Voice Systems",
+    "company": "NEC Australia",
+    "location": "Darwin, NT",
+    "category": "Technology",
+    "seniority": "Unclassified",
+    "employmentType": "See source",
+    "salary": null,
+    "postedDate": null,
+    "closingDate": null,
+    "source": "NEC Careers",
+    "sourceUrl": "https://careers.nec.com/job/Darwin-Systems-Engineer%2C-Voice-Systems-Nort-0800/1369965257/",
+    "sourceType": "official employer careers",
+    "lastVerified": "2026-09-23",
+    "summary": "Automatically discovered from NEC Careers. Open the original source for the full role description.",
+    "skills": [
+      "Customer Service",
+      "ITIL",
+      "Troubleshooting"
+    ],
+    "desirableSkills": [],
+    "requirements": [],
+    "matchBand": "Reach",
+    "pipelineDiscovered": true,
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
+  },
+  {
+    "id": 260923004,
+    "title": "Senior Systems Engineer",
+    "company": "NEC Australia",
+    "location": "Darwin, NT",
+    "category": "Technology",
+    "seniority": "Unclassified",
+    "employmentType": "See source",
+    "salary": null,
+    "postedDate": null,
+    "closingDate": null,
+    "source": "NEC Careers",
+    "sourceUrl": "https://careers.nec.com/job/Darwin-Senior-Systems-Engineer-Nort-0800/1364382457/",
+    "sourceType": "official employer careers",
+    "lastVerified": "2026-09-23",
+    "summary": "Automatically discovered from NEC Careers. Open the original source for the full role description.",
+    "skills": [
+      "Active Directory",
+      "Customer Service",
+      "Intune",
+      "Microsoft 365",
+      "PowerShell",
+      "Process Improvement",
+      "SQL",
+      "System Integration",
+      "Troubleshooting"
+    ],
+    "desirableSkills": [],
+    "requirements": [],
+    "matchBand": "Reach",
+    "pipelineDiscovered": true,
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
+  },
+  {
+    "id": 260923005,
+    "title": "Junior Technical Business Analyst",
+    "company": "NEC Australia",
+    "location": "Darwin, NT",
+    "category": "Business Analysis",
+    "seniority": "Unclassified",
+    "employmentType": "See source",
+    "salary": null,
+    "postedDate": null,
+    "closingDate": null,
+    "source": "NEC Careers",
+    "sourceUrl": "https://careers.nec.com/job/Darwin-Junior-Technical-Business-Analyst-Nort-0800/1372389557/",
+    "sourceType": "official employer careers",
+    "lastVerified": "2026-09-23",
+    "summary": "Automatically discovered from NEC Careers. Open the original source for the full role description.",
+    "skills": [
+      "Azure",
+      "Azure DevOps",
+      "Business Analysis",
+      "Confluence",
+      "Customer Service",
+      "Data Analysis",
+      "Data Mapping",
+      "Documentation",
+      "Jira",
+      "Process Mapping",
+      "Requirements Gathering",
+      "SharePoint",
+      "Stakeholder Management",
+      "System Integration",
+      "Testing"
+    ],
+    "desirableSkills": [],
+    "requirements": [],
+    "matchBand": "Reach",
+    "pipelineDiscovered": true,
+    "status": "active",
+    "lastChecked": "2026-09-23",
+    "sourceHealth": "reachable"
   }
 ]
