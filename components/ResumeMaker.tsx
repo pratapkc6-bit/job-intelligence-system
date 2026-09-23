@@ -126,11 +126,24 @@ export default function ResumeMaker() {
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (!stored) return;
-    try {
-      setProfile(JSON.parse(stored) as Profile);
-    } catch {
-      window.localStorage.removeItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        setProfile(JSON.parse(stored) as Profile);
+      } catch {
+        window.localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+
+    const requestedJob = new URLSearchParams(window.location.search).get("job");
+    if (requestedJob) {
+      const job = jobs.find((item) => String(item.id) === requestedJob);
+      if (job) {
+        setSelectedJobId(String(job.id));
+        setJobTitle(job.title);
+        setCompany(job.company);
+        setRequirements(job.skills.join(", "));
+        setGeneratedRequirements(job.skills.join(", "));
+      }
     }
   }, []);
 
