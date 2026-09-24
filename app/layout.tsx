@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Darwin Job Intelligence",
-  description: "Track Darwin IT roles, skills demand, and job-readiness signals.",
+  title: "Pratap IT Support Lab",
+  description: "Interactive IT support troubleshooting simulator and technical portfolio.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

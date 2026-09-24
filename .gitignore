@@ -1,12 +1,7 @@
-node_modules/
 .next/
 out/
+node_modules/
+.DS_Store
+*.log
 .env
 .env.local
-.env.*.local
-*.log
-.DS_Store
-__pycache__/
-*.py[cod]
-.venv/
-venv/

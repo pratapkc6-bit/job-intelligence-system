@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "export",
   trailingSlash: true,
-  basePath: isGitHubActions ? `/${repoName}` : "",
-  assetPrefix: isGitHubActions ? `/${repoName}/` : "",
+  basePath: isGitHubActions ? "/" + repoName : "",
+  assetPrefix: isGitHubActions ? "/" + repoName + "/" : "",
 };
 
 export default nextConfig;

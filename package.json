@@ -1,12 +1,11 @@
 {
-  "name": "darwin-job-intelligence",
-  "version": "0.1.0",
+  "name": "pratap-it-support-lab",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "next": "^16.0.0",

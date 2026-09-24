@@ -1,5 +1,5 @@
-import IntelligenceDashboard from "@/components/IntelligenceDashboard";
+import SupportLab from "@/components/SupportLab";
 
 export default function Home() {
-  return <IntelligenceDashboard />;
+  return <SupportLab />;
 }
