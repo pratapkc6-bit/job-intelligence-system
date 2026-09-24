@@ -420,6 +420,7 @@ export default function SupportLab() {
   const [notes, setNotes] = useState("");
   const [challengeMode, setChallengeMode] = useState(false);
   const [filter, setFilter] = useState("All");
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     try {
@@ -427,16 +428,19 @@ export default function SupportLab() {
       if (saved) setProgress(JSON.parse(saved));
     } catch {
       // Browser storage is optional. The lab still works without it.
+    } finally {
+      setHydrated(true);
     }
   }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
     } catch {
       // Ignore storage failures.
     }
-  }, [progress]);
+  }, [progress, hydrated]);
 
   const selected = useMemo(
     () => SCENARIOS.find((scenario) => scenario.id === selectedId) || SCENARIOS[0],
@@ -971,7 +975,7 @@ export default function SupportLab() {
                     <strong>{item.skill}</strong>
                     <span>{item.score}%</span>
                   </div>
-                  <div className="ring" style={{ ["--score" as string]: item.score + "%" }}>
+                  <div className="ring" style={{ "--score": item.score + "%" } as React.CSSProperties}>
                     <div>{item.score}</div>
                   </div>
                   <p>{item.completed} completed scenario{item.completed === 1 ? "" : "s"} • {item.attempts} attempt{item.attempts === 1 ? "" : "s"}</p>
